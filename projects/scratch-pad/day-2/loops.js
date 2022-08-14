@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { keys } = require("lodash");
+
 /**
  * IN CLASS EXERCISE: LOOPS
  */
@@ -58,16 +60,18 @@ function getObjectKeys(object) {
  * Given an input Object, loop over the Object and print its keys 
  * using console.log().
  */
-function printObjectKeys(object) {
+ function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
 
-    console.log(Object.keys(object));
+    for (var key in object){
+     console.log(key);
+    }
   
 
 
 
   // YOUR CODE ABOVE HERE //
-}
+}printObjectKeys(myObject);
 
 /** 
  * Given an input Object, return an Array containing the Object's values.
@@ -88,7 +92,9 @@ function getObjectValues(object) {
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
   //create for in loop to iterate over object and print its values
-
+  for (var key in object){
+    console.log(object[key]);
+  }
 
 
   // YOUR CODE ABOVE HERE //

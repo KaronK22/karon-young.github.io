@@ -11,14 +11,17 @@
  * return a Function that tests whether a given value is greater than the 
  * base.
  */
-function createGreaterThanFilter(base) {
+
+ function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+ return function value(number, base){
+  
+}  
     
     
     // YOUR CODE ABOVE HERE //
-}
+} console.log(createGreaterThanFilter(3));
+
 
 /** 
  * Given an input base to test against, which could be a String or Number, 
