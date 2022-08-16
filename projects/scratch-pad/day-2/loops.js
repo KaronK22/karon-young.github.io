@@ -120,7 +120,15 @@ var entr = Object.entries(object);
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
   
+var objArr = [];
 
+for (var i in object){
+  objArr.push(object[i]);
+}
+
+objArr.reverse();
+
+return objArr;
 
 
   // YOUR CODE ABOVE HERE //

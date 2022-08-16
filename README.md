@@ -2,7 +2,8 @@
 
 ## How to run git commands in terminal
 1) in terminal, type => git add -A
-2) in terminal, type => git commit -m "description of commit in quotes"
+2) in terminal, type => 
+
 3) in terminal, type => git push
 
 ## How to install projects using opspark tool
