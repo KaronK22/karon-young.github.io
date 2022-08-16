@@ -21,14 +21,29 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    var splitString = input.split("");
+   
+ 
+   
+    var reverseInput = splitString.reverse(); 
+   
+ 
     
+    var joinArray = reverseInput.join(""); 
+   
     
-    
-    
+    return joinArray; 
+
+
     // YOUR CODE GOES ABOVE HERE //
-}
 
-
+  }
+ 
+reverseString("hello");
+    
+    
+    
+ 
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
