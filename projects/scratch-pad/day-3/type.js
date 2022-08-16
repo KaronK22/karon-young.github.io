@@ -14,7 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+   return Array.isArray(value);
     
     
     
@@ -31,14 +31,15 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    if(typeof value === 'object'){
+    if (value !== undefined && value !== null && value.constructor === Object){
+    return true;
         
-    }
+    } else {return false;}
     
     
     
     // YOUR CODE ABOVE HERE //
-}
+} 
 
 /** 
  * Given an input value, return true if is either an Array or an an Object 
@@ -48,7 +49,7 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+  
     
     
     

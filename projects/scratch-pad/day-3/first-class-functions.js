@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { result } = require("lodash");
+
 /**
  * IN CLASS EXERCISE: FIRST CLASS FUNCTIONS
  */
@@ -14,13 +16,16 @@
 
  function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
- return function value(number, base){
-  
-}  
+ return function(value){
+   if (base < value ){
+     return true
+   } else {return false}
+    
+}
     
     
     // YOUR CODE ABOVE HERE //
-} console.log(createGreaterThanFilter(3));
+} console.log(createGreaterThanFilter('a')('b'));
 
 
 /** 
@@ -28,14 +33,19 @@
  * return a Function that tests whether a given value is less than the 
  * base.
  */
-function createLessThanFilter(base) {
+
+ function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+ return function(value){
+   if (base > value ){
+     return true
+   } else {return false}
+
+}
     
     
     // YOUR CODE ABOVE HERE //
-}
+} console.log(createLessThanFilter('a')('b'));
 
 /** 
  * Given a startsWith character, which will be a single character, return a 
@@ -44,7 +54,12 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+   return function(string){
+    if (startsWith.toUpperCase() === string[0].toUpperCase()){
+        return true 
+    } else {return false}
+
+   } 
     
     
     
@@ -58,7 +73,12 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string){
+       let endChar = string.charAt(string.length - 1);
+        if (endsWith.toUpperCase() === endChar.toUpperCase()){
+            return true
+        } else { return false }
+    }
     
     
     
@@ -74,7 +94,10 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
+    let result = [];
+    for (var i = 0; i <= strings.length; i++){
+        modify(strings[i]);
+    } return result.push(strings[i]);
     
     
     

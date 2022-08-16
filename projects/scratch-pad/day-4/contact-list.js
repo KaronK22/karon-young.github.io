@@ -35,6 +35,11 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+  return {
+    id:id,
+    nameFirst: nameFirst,
+    nameLast: nameLast,
+  };
 
 } 
 
@@ -54,10 +59,19 @@ function makeContactList() {
             contacts.push(contact);
         },
         findcontact: function(fullName){
+            let nameFull = contacts['nameFirst'] + ' ' + contacts['nameLast'];
+            for (var i = 0; i <= contacts.length; i++){
+                if ()
+
+            }
             //iterate through contacts array using for loop 
             //determine if cuurent object relate to fullName
             //if true return object 
             
+        },
+        removeContact: function(remove){
+            
+
         }
     }
 }

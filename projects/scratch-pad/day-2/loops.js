@@ -119,7 +119,7 @@ var entr = Object.entries(object);
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-
+  
 
 
 
