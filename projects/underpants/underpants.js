@@ -231,6 +231,19 @@ _.each = function(collection, func){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func){
+    var output = [];
+    //determine if collection is array or object
+    if(Array,isArray(collection)){
+        //iterate through array
+         //push the result of invoking func on current value index in collection
+        for (var i = 0; i < collection.length; i++){
+           output.push(func(array[i], i, collection));
+        }
+    } else {
+
+    } return output
+}
 
 /** _.pluck
 * Arguments:
