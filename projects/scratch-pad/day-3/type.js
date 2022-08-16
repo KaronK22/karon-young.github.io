@@ -49,7 +49,11 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-  
+  if(Array.isArray(value) || Object.prototype.toString.call(value) === '[object Object]'){
+    return true
+  } else {
+    return false;
+  }
     
     
     
@@ -77,7 +81,33 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
+    if(Array.isArray(value)) {
+        return 'array';
+      }
+      if(value === null) {
+        return 'null';
+      }
+      if(value instanceof Date) {
+        return 'date';
+      }
+      if(typeof value === 'object' ) {
+        return 'object';
+      }
+       if(typeof value === 'function') {
+        return 'function';
+       }
+       if(typeof value === 'string') {
+         return 'string';
+       }
+       if(value === 'boolean') {
+         return 'boolean';
+       }
+       if(value === undefined) {
+         return 'undefined';
+       }
+       if(typeof value === 'number') {
+         return 'number';
+       }
     
     
     

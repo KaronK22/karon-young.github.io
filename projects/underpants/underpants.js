@@ -45,7 +45,7 @@ _.identity = function(value){
 */
 
 _.typeOf = function(value){
-     return typeof value;
+     return 
 }
 
 
@@ -88,6 +88,9 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(arr, number){
+    
+}
 
 /** _.indexOf
 * Arguments:
@@ -104,6 +107,12 @@ _.typeOf = function(value){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
+
+_.indexOf = function(arr, value){
+     
+
+
+}
 
 
 /** _.contains
@@ -142,7 +151,7 @@ _.each = function(collection, func){
     //determine if the collection is an array 
        if (Array.isArray(collection)){
         //iterate through collection 
-        for (var i = 0;i <= collection.length; i++){
+        for (var i = 0;i < collection.length; i++){
             func(collection[i], i, collection)
         }
        }
@@ -232,17 +241,17 @@ _.each = function(collection, func){
 */
 
 _.map = function(collection, func){
-    var output = [];
-    //determine if collection is array or object
-    if(Array,isArray(collection)){
-        //iterate through array
-         //push the result of invoking func on current value index in collection
-        for (var i = 0; i < collection.length; i++){
-           output.push(func(array[i], i, collection));
-        }
-    } else {
+    // var output = [];
+    // //determine if collection is array or object
+    // if(Array,isArray(collection)){
+    //     //iterate through array
+    //      //push the result of invoking func on current value index in collection
+    //     for (var i = 0; i < collection.length; i++){
+    //        output.push(func(array[i], i, collection));
+    //     }
+    // } else { console.log('else');
 
-    } return output
+    // } return output
 }
 
 /** _.pluck
