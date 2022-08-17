@@ -144,7 +144,11 @@ _.last = function(arr, number){
 */
 
 _.indexOf = function(arr, value){
-     
+     for(var i = 0; i < arr.length; i++){
+      if(value === arr[i]){
+        return i;
+      }
+     } return -1; 
 
 
 }
@@ -322,6 +326,37 @@ _.map = function(collection, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func){
+/**
+ * let collection = [1,2,3]
+ * let func; // undefined
+ *  determine if func was not passed a value 
+ */
+  if(!func){
+    //determine if array 
+    if(Array.isArray(collection)){
+      //iterate over collection using loop
+      for (let i = 0; i < collection.length; i++){
+        //determine if the current value is falsey
+        if (!collection[i]){
+          return false;
+        }
+      }
+    } else { //func was passed a value 
+      for (let key in collection){
+        if (!collection[key]){
+          return false;
+        }
+      }
+    }
+  } else { //
+
+  } return true;
+} 
+
+ 
+  
+
 
 /** _.some
 * Arguments:
@@ -379,6 +414,12 @@ _.map = function(collection, func){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(obj1,obj2, ...obj3){
+ Object.assign(obj1, obj2)
+ if (...obj3 > )
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

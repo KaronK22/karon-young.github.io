@@ -223,7 +223,13 @@ if (stringOne.length > stringTwo.length){
 
     // YOUR CODE BELOW HERE //
   //create variable and assing 
-
+if (stringOne > stringTwo){
+    return -1;
+}else if (stringOne < stringTwo){
+    return 1;
+} else if (stringOne === stringTwo){
+    return 0;
+} else {return 0}
 
     // YOUR CODE ABOVE HERE //
 }
@@ -238,7 +244,13 @@ if (stringOne.length > stringTwo.length){
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    if (stringOne > stringTwo){
+        return 1;
+    }else if (stringOne < stringTwo){
+        return -1;
+    } else if (stringOne === stringTwo){
+        return 0;
+    } else {return 0}
 
 
 
