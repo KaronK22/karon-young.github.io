@@ -71,7 +71,7 @@ function getObjectKeys(object) {
 
 
   // YOUR CODE ABOVE HERE //
-}printObjectKeys(myObject);
+}
 
 /** 
  * Given an input Object, return an Array containing the Object's values.

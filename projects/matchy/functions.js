@@ -26,10 +26,10 @@ function search(arr, string) {
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var otter = {
-  name: ottis,
-  age: 23,
-};
+// var otter = {
+//   name: 'ottis',
+//   age: 23,
+// };
 
 
 function replace(animalArr, noa, repl) {
@@ -41,7 +41,7 @@ function replace(animalArr, noa, repl) {
   } return animalArr;
 
 
-} console.log(replace(animals, 'snack', otter))
+} //console.log(replace(animals, 'snack', otter))
 
 
 
@@ -49,13 +49,31 @@ function replace(animalArr, noa, repl) {
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function remove(aniArr, name){
+  for (var i = 0; i <= aniArr.length - 1; i++){
+  if (aniArr[i]['name'] === name){
+      aniArr.splice(aniArr[i], 1);
+  }
+  }
+}
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function add(aniArr, animal){
+  for (var i = 0; i <= aniArr.length - 1; i++){
+    if(aniArr[i]['name'].length > 0){
+      if(aniArr[i]['species'].length > 0){
+        if (aniArr.filter(function(e) { return e.name === animal['name']; }).length === 0) {
+         aniArr.push(animal);
+        }
+      }
+    }
+    
+    } console.log(aniArr);  
+    return aniArr;
+}
 
 /**
  * You did it! You're all done with Matchy!

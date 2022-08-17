@@ -45,7 +45,33 @@ _.identity = function(value){
 */
 
 _.typeOf = function(value){
-     return 
+    if(Array.isArray(value)) {
+        return 'array';
+      }
+      if(value === null) {
+        return 'null';
+      }
+      if(value instanceof Date) {
+        return 'date';
+      }
+      if(typeof value === 'object' ) {
+        return 'object';
+      }
+       if(typeof value === 'function') {
+        return 'function';
+       }
+       if(typeof value === 'string') {
+         return 'string';
+       }
+       if(value === true || value === false) {
+         return 'boolean';
+       }
+       if(value === undefined) {
+         return 'undefined';
+       }
+       if(typeof value === 'number') {
+         return 'number';
+       }
 }
 
 
@@ -68,6 +94,15 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(arr, number){
+    var emptyArr = []
+    if(!Array.isArray(arr)){
+        return emptyArr;
+    }
+    if(number !== NaN){
+        return arr[0];
+    } else { return arr.slice(0, number) }
+}
 
 
 /** _.last

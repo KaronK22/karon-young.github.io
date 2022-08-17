@@ -60,7 +60,7 @@ function makeContactList() {
         },
         findcontact: function(fullName){
             for (var i = 0; i <= contacts.length; i++){
-                if (contacts[i].nameFirst + ' ' + contact[i].nameLast === fullName){
+                if (contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName){
 
                     return contacts[i];
 

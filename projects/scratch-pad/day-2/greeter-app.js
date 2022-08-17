@@ -55,7 +55,7 @@ function greeter(hour) {
 
 }
   var today = new Date();
-    dayhour = today.getHours();  
+  var dayhour = today.getHours();  
   
 /*
  * To test our greeter when developing, we need to fake some input data, ie, 
