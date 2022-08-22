@@ -3,31 +3,59 @@
 // /////////////////////////////////////////////////////////////////////////////
 
 function flatten() {
-
+  let arrays = [[1, 2, 3], [4, 5], [6]];
+  function flatten(arr) {
+      arr.reduce(
+          function(accumulator, currentValue) {
+              return accumulator.concat(currentValue);
+          }
+      )
+  }
+  console.log(flatten(arrays));
 }
-
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
-
-function loop() {
-
+function loop(start, test, update, body) {
+  for (let value = start; test(value); value = update(value)) {
+    body(value);
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
-
+function every(array, test) {
+  for (let element of array) {
+    if (test(element) === false) {
+      return false;
+    }
+  }
+  return true;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
-
+function dominantDirection(text) {
+  let scripts = countBy(text, char => {
+    let script = characterScript(char.codePointAt(0));
+    return script ? script.direction : "none";
+  }).filter(({name}) => name != "none");
+  switch (scripts.length) {
+    case 0:
+      return 'no dominant direction found';
+    case 1:
+      return scripts[0].name;
+    default:
+      if (scripts.reduce((acc, cur) => acc.count === cur.count)) {
+        return 'no dominant direction found';
+      } else {
+        return scripts.reduce((acc, cur) => acc.count >= cur.count ? acc.name : cur.name);
+      }
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
