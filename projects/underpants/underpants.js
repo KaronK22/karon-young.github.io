@@ -228,6 +228,15 @@ _.each = function(collection, func){
 *   use _.each in your implementation
 */
 
+_.filter = function(array, func){
+  var output = [];
+  for ( var i = 0; i < array.length; i++){
+    if(func(array[i], i, array) === true){
+      output.push(array[i])
+    };
+    
+  } return output
+}
 
 /** _.reject
 * Arguments:
@@ -242,6 +251,14 @@ _.each = function(collection, func){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(array, func){
+  var output = [];
+  for (var i = 0; i < array.length; i++){
+    if(!func(array[i], i, array)){
+      output.push(array[i]);
+    }
+  } return output;
+}
 
 /** _.partition
 * Arguments:
@@ -262,6 +279,15 @@ _.each = function(collection, func){
 }
 */
 
+_.partition = function(array, func){
+  var trueArr = [];
+  var falseArr = [];
+  for (var i = 0; i < array.length; i++){
+    if (func(array[i], i, array) === true){
+      trueArr.push(array[i]);
+    } 
+  }
+}
 
 /** _.map
 * Arguments:
@@ -280,17 +306,19 @@ _.each = function(collection, func){
 */
 
 _.map = function(collection, func){
-    // var output = [];
-    // //determine if collection is array or object
-    // if(Array,isArray(collection)){
-    //     //iterate through array
-    //      //push the result of invoking func on current value index in collection
-    //     for (var i = 0; i < collection.length; i++){
-    //        output.push(func(array[i], i, collection));
-    //     }
-    // } else { console.log('else');
+    var output = [];
+    //determine if collection is array or object
+    if(Array.isArray(collection)){
+        //iterate through array
+         //push the result of invoking func on current value index in collection
+        for (var i = 0; i < collection.length; i++){
+           output.push(func(collection[i], i, collection));
+        }
+    } else { for (let key in collection){
+       output.push(func(collection[key], key, collection))
+    } 
 
-    // } return output
+    } return output
 }
 
 /** _.pluck
@@ -304,6 +332,12 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function(objArr, prop){
+   let output = _.map(objArr, function(obj){
+     return obj[prop]
+   });
+   return output;
+}
 
 /** _.every
 * Arguments:
@@ -399,7 +433,24 @@ _.every = function(collection, func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(arr, func, seed){
+  let result;
+//determine if seed is NOT undefined  
+if( seed !== undefined){
+  result = seed;
+  for (let i = 0; i < arr.length; i++){
+    result = func(result, arr[i], i , arr);
+  }
 
+}else { //seed is undefined 
+result = arr[0];
+for (let i = 1; i < arr.length; i++){
+  result = func(result, arr[i], i, arr);
+}
+} 
+return result;
+
+}
 /** _.extend
 * Arguments:
 *   1) An Object
@@ -415,10 +466,10 @@ _.every = function(collection, func){
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function(obj1,obj2, ...obj3){
- Object.assign(obj1, obj2)
- if (...obj3 > )
-}
+// _.extend = function(obj1,obj2, ...obj3){
+//  Object.assign(obj1, obj2)
+//  if (...obj3 > )
+// }
 
 
 //////////////////////////////////////////////////////////////////////

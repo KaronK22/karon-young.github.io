@@ -25,7 +25,13 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    var valArr = [];
+    for (var key in object){
+        if (typeof object[key] === 'string'){
+        valArr.push(object[key]);
+        }
+    } 
+    return valArr.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -90,8 +96,16 @@ function profileInfo(object) {
 
 function maybeNoises(object) {
 
+var output =[];
+// search through object to see if there is a noises array exist
+        //if it doesn't return there are no noises 
+    for (var key in object){
+    if (object[key]['noises'] < 0){
+       return console.log('there are no noises')
+    } else {output.push(object[key]['noises'])
 }
-
+} return output.join(' ');
+}
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
